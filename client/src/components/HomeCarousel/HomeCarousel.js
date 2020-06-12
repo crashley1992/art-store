@@ -30,8 +30,6 @@ class HomeCarousel extends Component {
         }
     }
 
-
-
     render() {
         const newImage = this.state.images[this.state.index]
 

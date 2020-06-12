@@ -1,12 +1,21 @@
 #home-carousel {
     border: solid grey 2px;
     text-align: center;
-    height: 500px;
+    height: 600px;
 }
 
 .image-gallery {
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 45%;
     margin-left: auto;
     margin-right: auto;
+    animation-name: fadeOut;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
