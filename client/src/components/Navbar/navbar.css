@@ -1,3 +1,44 @@
+.nav-wrapper {
+    background-color: #BAA7B0;
+    box-shadow: 2px 2px 1px lightgrey;
+    height:90px
+}
+
 .brand-logo {
-    
+    text-decoration: inherit;
+    color: whitesmoke;
+    display: inline-block;
+    font-size: 35px;
+    margin-left: 15%;
+    padding-top: 10px;
+}
+
+.nav-links {
+    float: right;
+    margin-right: 15%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-item > a {
+    text-decoration: inherit;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 5px;
+    color: whitesmoke;
+    display: inline-block;
+}
+
+.shopping-icon {
+    margin-left: 1%;
+}
+
+.nav-item:hover {
+    background-color: #B2ABBF;
+    border: whitesmoke solid 2px;
 }
