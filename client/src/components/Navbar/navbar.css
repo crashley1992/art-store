@@ -1,7 +1,9 @@
 .nav-wrapper {
     background-color: #BAA7B0;
     box-shadow: 2px 2px 1px lightgrey;
-    height:90px
+    height:100px;
+    font-family: 'MuseoModerno', cursive;
+
 }
 
 .brand-logo {
@@ -10,7 +12,7 @@
     display: inline-block;
     font-size: 35px;
     margin-left: 15%;
-    padding-top: 10px;
+    padding-top: 25px;
 }
 
 .nav-links {
@@ -41,4 +43,8 @@
 .nav-item:hover {
     background-color: #B2ABBF;
     border: whitesmoke solid 2px;
+}
+
+.nav-item:active {
+    background-color: #C7EBF0;
 }

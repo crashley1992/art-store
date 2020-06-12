@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-class Home extends Component {
-    render() {
-        return(            
+import HomeCarousel from '../components/HomeCarousel/HomeCarousel';
+
+const Home = () => {
+    return (
         <div>
-        
-        </div>
-            
+               <HomeCarousel />
+            </div>
         )
-    }
 }
 
 export default Home;
