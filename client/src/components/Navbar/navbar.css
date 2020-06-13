@@ -2,8 +2,6 @@
     background-color: #BAA7B0;
     box-shadow: 2px 2px 1px lightgrey;
     height:100px;
-    font-family: 'MuseoModerno', cursive;
-
 }
 
 .brand-logo {
@@ -20,6 +18,83 @@
     margin-right: 15%;
     font-size: 20px;
     text-align: center;
+}
+
+#menu-button {
+    display: none;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+
+    #menu-button {
+        margin-right: 25px;
+        margin-top: 25px;
+        display: block;
+        padding: 5px;
+        border: whitesmoke 1px solid;
+        border-radius: 15%;
+    }
+
+    #menu-button:hover {
+        background-color: whitesmoke;
+    }
+
+    #menu-button:active {
+        background-color: whitesmoke;
+    } 
+
+    .mobile-links-display {
+        display: block;
+        width: 250px;
+        padding: 5px 0px 5px 0px;
+        height: 88px;
+        font-size: 25px;
+        text-align: center;
+        margin-left: -205px;
+    }
+
+    .mobile-nav-item {
+        border: solid black 1px;
+        box-shadow: 2px 5px 5px grey;
+        width: 250px;
+        padding: 5px 0px 5px 0px;
+        color: whitesmoke;
+        background-color: #B1B5C8;
+    }
+
+    .mobile-nav-item > a {
+        text-decoration: inherit;
+        color: whitesmoke;
+        padding: 5px 0px 5px 0px;
+        margin-right: -50px;
+    }
+
+    .mobile-nav-item > a:hover {
+        color: #C7EBF0;
+    }
+
+    .shopping-icon {
+        color: whitesmoke;
+        float: right;
+        margin-right: 10px;
+        padding-top: 5px;
+    }
+
+    .shopping-icon:hover {
+        color: #C7EBF0;
+    }
+
+    .mobile-nav-item {
+        display: block;
+    }
+    
+}
+
+.mobile-links-display {
+    display: none;
 }
 
 .nav-item {
@@ -47,4 +122,8 @@
 
 .nav-item:active {
     background-color: #C7EBF0;
+}
+
+.mobile-toggle {
+    float: right;
 }

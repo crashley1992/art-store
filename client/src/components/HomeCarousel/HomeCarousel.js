@@ -8,7 +8,6 @@ class HomeCarousel extends Component {
 
     state = {
         images: [image1, image2, image3],
-        visible: false,
         index: 0
     }
 
