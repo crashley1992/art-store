@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import { FaShoppingCart } from "react-icons/fa";
 import { FaStore } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 
 class Navbar extends Component {
@@ -11,6 +12,7 @@ class Navbar extends Component {
         visible: false,
         display: "none"
     }
+
 
     handleMenu = () => {
         this.setState({ visible:  !this.state.visible})
@@ -26,6 +28,13 @@ class Navbar extends Component {
         }
      }
 
+     handleMenuClose = () => {
+         this.setState({
+             display: "none",
+             visible: !this.state.visible
+        })
+     }
+
     render() {
         return (
             <nav className="nav-wrapper">
@@ -34,7 +43,8 @@ class Navbar extends Component {
     
                 <div className="mobile-toggle">
                     <MdMenu size={35} id="menu-button" onClick={this.handleMenu}/>
-                    <div className="mobile-links-display" style={{display: this.state.display}}>
+                    <div className="mobile-links-display" style={{display: this.state.display}} onClick={this.handleMenuClose}>
+                    <li className="mobile-nav-item"><Link to="/">Home <FaHome size={25} className="shopping-icon"/></Link></li>
                         <li className="mobile-nav-item"><Link to="/shop">Shop <FaStore size={25} className="shopping-icon"/></Link></li>
                             <li className="mobile-nav-item"><Link to="/cart">Checkout<FaShoppingCart size={25} className="shopping-icon"/></Link></li>
                     </div>
