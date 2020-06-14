@@ -1,22 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import cartReducer from "./components/Reducers/cartReducer";
 import { Provider } from 'react-redux';
-
+import { createStore } from 'redux';
 import './index.css';
 import App from '../src/container/App';
 import * as serviceWorker from './serviceWorker';
 
-// import cartReducer  from '../src/Reducers/cartReducer';
-
-
-// const store = createStore(cartReducer);
+const store = createStore(cartReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
       <App />
-    {/* </Provider> */}
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

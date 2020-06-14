@@ -1,30 +1,46 @@
 #home-carousel {
     text-align: center;
-    height: 50%;
-    width: 90%;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
+    position: absolute;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #home-carousel {
+        height: 80%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #home-carousel {
+        height: 90%;
+        width: 100%;
+    }
 }
 
 .image-gallery {
     width: 40%;
-    height: 30%;
+    height: 35%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3%;
+    margin-top: 1%;
     animation-name: fadeOut;
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .image-gallery {
         width: 100%;
         height: 50%;
     }
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .image-gallery {
         width: 100%;
         height: 40%;
