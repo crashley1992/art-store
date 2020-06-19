@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import CanvasListComponent from "./canvasList/CanvasListComponent";
 import "./shop-component.css";
-import Footer from "../Footer/Footer";
-
+import  { addToCart }  from "../actions/cartActions"
 class ShopComponent extends Component {
+
+    handleAdd = (id) => {
+        this.props.addToCart(id)
+    }
+
     render() {
         // Maps item description to div from cartReducer
         let itemList = this.props.items.map(item => {
@@ -14,7 +18,9 @@ class ShopComponent extends Component {
                         <img src={item.img} alt={item.title} />
                         <span className="item-title">{item.title}</span>
                         <p>{item.desc}</p>
-                        <CanvasListComponent />
+                        <CanvasListComponent 
+                            handleAdd={this.handleAdd(this.props.value)}
+                        />
                     </div>
                 </div>
             )
@@ -38,4 +44,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ShopComponent);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (id) => { dispatch(addToCart(id)) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopComponent);
