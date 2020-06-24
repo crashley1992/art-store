@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import CanvasListComponent from "./canvasList/CanvasListComponent";
 import "./shop-component.css";
-import  { addToCart }  from "../actions/cartActions"
-class ShopComponent extends Component {
+import  { addToCart }  from "../actions/cartActions";
 
-    handleAdd = (id) => {
-        this.props.addToCart(id)
-    }
+class ShopComponent extends Component {
 
     render() {
         // Maps item description to div from cartReducer
@@ -18,9 +15,7 @@ class ShopComponent extends Component {
                         <img src={item.img} alt={item.title} />
                         <span className="item-title">{item.title}</span>
                         <p>{item.desc}</p>
-                        <CanvasListComponent 
-                            handleAdd={this.handleAdd(this.props.value)}
-                        />
+                        <CanvasListComponent />
                     </div>
                 </div>
             )

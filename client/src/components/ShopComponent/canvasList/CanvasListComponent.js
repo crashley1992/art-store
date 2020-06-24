@@ -2,27 +2,43 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./canvas-list.css";
 import { GrAdd } from "react-icons/gr";
+import  { addToCart }  from "../../actions/cartActions";
 
 class CanvasListComponent extends Component {
+
+    handleAdd = (id) => {
+        this.props.addToCart(id)
+        console.log(id + " change")
+    }
+
+    handleSubmit = () => {
+        this.handleAdd()
+    }
+
         render() {
+            //gets each canvas type to render for users to select diff sizes
+            let canvasList = this.props.canvasType.map(canvas => {
+               return(
+                    <option onClick={this.handleAdd(canvas.id)} key={canvas.id}>{canvas.type} | Price: {canvas.price}</option>                
+               )
+            })
+            
+            return(
+                <div>
+                    <h5>Select a Canvas Size</h5>
+                    <select>
+                    {canvasList}
+                    </select> 
+                    <button class="cart-add" type="submit" value="submit" onClick={this.handleSubmit}>Add to Cart
+                    <GrAdd id="add-icon"/>
+                    </button>
+
+                </div>
+                
+            )
+        }
                    
-        
-     return(
-        <div className="canvas-checklist">
-        <form>
-            <label id="canvas-label" for="canvas">Select Canvas Type</label>
-            <select name="canvas" id="canvas-type">
-                <option id={this.props.canvasType[0].id} value={this.props.canvasType[0].id}>{this.props.canvasType[0].type} | Price: {this.props.canvasType[0].price}</option> 
-                <option id={this.props.canvasType[1].id} value={this.props.canvasType[0].id}>{this.props.canvasType[1].type} | Price: {this.props.canvasType[1].price}</option> 
-            </select>
-            <button class="cart-add" type="submit" value="submit" onClick={() => {this.props.handleAdd(this.props.value)}}>Add to Cart
-            <GrAdd id="add-icon"/>
-            </button>
-        </form>
-    </div>
-        )
-     }
- }
+}
     
 
 const mapStateToProps = (state) => {
@@ -31,4 +47,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(CanvasListComponent);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (id) => { dispatch(addToCart(id)) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CanvasListComponent);
