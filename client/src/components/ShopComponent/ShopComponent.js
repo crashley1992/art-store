@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./shop-component.css";
-import  { addToCart }  from "../actions/cartActions";
+import  { addToCart, addToTotal }  from "../actions/cartActions";
 import { GrAdd } from "react-icons/gr";
 
 class ShopComponent extends Component {
 
     //id is how item added to cart is tracked
     handleClick = (id)=>{
-        this.props.addToCart(id);
         console.log(id)
+        this.props.addToCart(id);
     }
 
+    //tracks price for added to cart
      handlePrice = (event) => {
             event.preventDefault()
             let value = event.target.value
             console.log(value + " selected")
+            this.props.addToTotal(value)
     }
 
 
@@ -65,7 +67,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (id) => { dispatch(addToCart(id)) }
+        addToCart: (id) => { dispatch(addToCart(id)) },
+        addToTotal: (value) => { dispatch(addToTotal(value)) }
     }
 }
 

@@ -34,19 +34,15 @@ const cartReducer = (state = initState, action) => {
        {
           addedItem.quantity += 1 
            return{
-              ...state,
-               total: state.total + addedItem.price 
+              ...state
                 }
       }
        else{
           addedItem.quantity = 1;
-          //calculating the total
-          let newTotal = state.total + addedItem.price 
           
           return{
               ...state,
               addedItems: [...state.addedItems, addedItem],
-              total : newTotal
           }
           
       }
@@ -54,7 +50,6 @@ const cartReducer = (state = initState, action) => {
   else{
       return state
   }
-
 }
 
 

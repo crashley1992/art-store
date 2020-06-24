@@ -1,10 +1,18 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
+import { ADD_TO_CART, ADD_TO_TOTAL, REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
 
 //add cart action
 export const addToCart= (id)=>{
     return{
         type: ADD_TO_CART,
-        id,
+        id
+    }
+}
+
+//add to total
+export const addToTotal= (value)=>{
+    return{
+        type: ADD_TO_TOTAL,
+        value
     }
 }
 //remove item action
