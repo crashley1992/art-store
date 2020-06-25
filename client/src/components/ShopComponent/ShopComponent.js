@@ -26,7 +26,7 @@ class ShopComponent extends Component {
         let itemList = this.props.items.map(item => {
             let canvasList = item.canvasType.map(canvas => {
                 return(
-                    <option key={canvas.id} value={canvas.price}>{canvas.type} | Price: {canvas.price}</option> 
+                    <option key={canvas.id} value={canvas.price} key={canvas.id}>{canvas.type} | Price: {canvas.price}</option> 
                 )
             });
 

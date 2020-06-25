@@ -10,14 +10,14 @@ class CartComponent extends Component {
         let list = this.props.addedItems.length === 0 ? <EmptyCart /> : this.props.addedItems.map(item => {
                return <div className="checkout-items">
                     <h1>Items For Checkout</h1>
-                    <h6>{item.title}</h6>
-                    <img src={item.img} />
-               </div>
-                
-               
+                    <h6 key={item.id}>{item.title}</h6>
+                    <img key={item.id} src={item.img} />
+               </div>  
         })
+
             return(
          <div>
+            <h5>Total: {this.props.total}</h5>
             {list}
          </div>
      )
@@ -27,7 +27,8 @@ class CartComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        addedItems: state.addedItems
+        addedItems: state.addedItems,
+        total: state.total
     }
 }
 

@@ -36,24 +36,38 @@ const cartReducer= (state = initState,action)=>{
             addedItem.quantity += 1 
              return{
                 ...state,
-                 total: state.total + addedItem.price 
                   }
         }
          else{
-            addedItem.quantity = 1;
-            //calculating the total
-            let newTotal = state.total + addedItem.price 
-            
-            return{
+             return{
                 ...state,
-                addedItems: [...state.addedItems, addedItem],
-                total : newTotal
+                addedItems: [...state.addedItems, addedItem]
             }
             
         }
     }
+
+    if (action.type === ADD_TO_TOTAL) {
+        console.log(action.value + " value")
+        for (let i = 0; i < state.items.length; i++) {
+            let itemsList = state.items[i]
+            for (let j = 0; j < itemsList.canvasType.length; j++) {
+               let itemPrices = itemsList.canvasType[j].price
+                console.log(itemPrices)
+                return{
+                    ...state,
+                      total: state.total + itemPrices
+                      }
+            }
+        }
+
+    }
+
+
     else{
-        return state
+        return {
+            ...state
+        }
     }
   }
 
