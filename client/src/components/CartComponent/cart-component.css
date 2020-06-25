@@ -1,0 +1,10 @@
+.checkout-items {
+    height: 50%;
+    text-align: center;
+}
+
+.checkout-items > img {
+    height: 100px;
+    width: 100px;
+}
+

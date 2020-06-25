@@ -36,7 +36,7 @@ class ShopComponent extends Component {
                         <img src={item.img} alt={item.title} />
                         <span className="item-title">{item.title}</span>
                         <p>{item.desc}</p>
-                        <select value="null" onChange={this.handlePrice}>
+                        <select onChange={this.handlePrice}>
                         <option>Select a Canvas Size</option>
                         {canvasList}
                         </select>
